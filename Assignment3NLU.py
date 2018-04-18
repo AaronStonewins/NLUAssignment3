@@ -54,9 +54,9 @@ def wtofeatures(sentence, i):
     if i > 0:
         wordsub= sentence[i-1][0]
         features.update({
-            '-1:lower': wordsub.lower(),
-            '-1:titleornot': wordsub.istitle(),
-            '-1:upperornot': wordsub.isupper(),
+            'lower_-1': wordsub.lower(),
+            'titleornot_-1': wordsub.istitle(),
+            'upperornot_-1': wordsub.isupper(),
         })
     else:
         features['<s>'] = True
@@ -64,9 +64,9 @@ def wtofeatures(sentence, i):
     if i < len(sentence)-1:
         wordsub = sentence[i+1][0]
         features.update({
-            '+1:lower()': wordsub.lower(),
-            '+1:titleornot()': wordsub.istitle(),
-            '+1:upperornot()': wordsub.isupper(),
+            'lower_+1': wordsub.lower(),
+            'titleornot_+1': wordsub.istitle(),
+            'upperornot_+1': wordsub.isupper(),
         })
     else:
         features['<\s>'] = True
