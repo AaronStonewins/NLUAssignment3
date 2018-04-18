@@ -121,7 +121,7 @@ metrics.flat_f1_score(ytest, predicted,
 
 labelsorted = sorted(
     labels,
-    key=lambda name: (name[1:], name[0])
+    key=lambda n: (n[1:], n[0])
 )
 print(metrics.flat_classification_report(
     ytest, predicted, labels=labelsorted, digits=3
